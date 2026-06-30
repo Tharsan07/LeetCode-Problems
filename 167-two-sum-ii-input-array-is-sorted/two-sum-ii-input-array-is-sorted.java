@@ -1,19 +1,28 @@
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
-        int ind1=0;
+        // ArrayList <Integer> list = new ArrayList<>();
         int len=numbers.length;
-        int ind2=0;
-        for(int i=0;i<len;i++){
-            int val=numbers[i];
-            for(int j=i+1;j<len;j++){
-                if(numbers[j]+val==target){
-                    ind1=i;
-                    ind2=j;
-                   return new int[]{ind1+1,ind2+1}; 
-                }
+        int left = 0;
+        int right = len-1;
+        int sum = 0;
+        int[] result = new int[2];
+        while(left<right){
+            sum = numbers[left]+numbers[right];
+            if(sum==target){
+                // list.add(left+1);
+                // list.add(right+1);
+                result[0]=left+1;
+                result[1]=right+1;
+                return result;
             }
-            
+            else if(sum<target){ // if sum is smaller than target,increment left
+                left++;
+            }
+        //if sum is greater than target, reduce right
+        else{
+            right--;
         }
-        return new int[]{-1,-1};
+        } 
+        return result;
     }
 }
