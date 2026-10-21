@@ -4,7 +4,9 @@
  * @return {number}
  */
 var removeElement = function(nums, val) {
-    let ans=[];
+
+    // Brute force solutio
+/*    let ans=[];
     let ind = 0;
 // Val elements are removed and stored into ans array
      for( let i = 0; i< nums.length;i++){
@@ -16,6 +18,15 @@ var removeElement = function(nums, val) {
     let k = 0;
     for(let j = 0; j < ind; j++){
         nums[k++]= ans[j];
+    }
+    return k; */
+
+    //Optimal solution
+    let k = 0;
+    for ( let i = 0; i< nums.length; i++){
+        if(nums[i] != val){
+            nums[k++] = nums[i]; 
+        }
     }
     return k;
 };
