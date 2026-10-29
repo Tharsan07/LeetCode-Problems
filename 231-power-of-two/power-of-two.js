@@ -4,19 +4,25 @@ var isPowerOfTwo = function(n) {
 
     if (n % 2 !== 0) return false;
 
-    let count = 0;
-    let original = n;
+    // let count = 0;
+    // let original = n;
 
-    while (original > 1) {
-        count++;
-        original = Math.floor(original / 2);
+    // while (original > 1) {
+    //     count++;
+    //     original = Math.floor(original / 2);
+    // }
+
+    // let value = 1;
+
+    // for (let i = 0; i < count; i++) {
+    //     value = value * 2;
+    // }
+
+    // return value === n;
+
+    while ( n > 1){
+        if(n % 2 == 1)return false;
+        n = n/2;
     }
-
-    let value = 1;
-
-    for (let i = 0; i < count; i++) {
-        value = value * 2;
-    }
-
-    return value === n;
+    return true;
 };
