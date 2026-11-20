@@ -20,14 +20,20 @@ var missingNumber = function(nums) {
     // }
     
     //Better Solution
- let hash =new Array(n+1).fill(0);
- for(let i = 0; i <= n ; i++) {
-    hash[nums[i]]=1;
- }
- for( let i = 0; i <= n; i++){
-    if(hash[i]===0){
-        return i;
-    }
- }
-    
+//  let hash =new Array(n+1).fill(0);
+//  for(let i = 0; i <= n ; i++) {
+//     hash[nums[i]]=1;
+//  }
+//  for( let i = 0; i <= n; i++){
+//     if(hash[i]===0){
+//         return i;
+//     }
+//  }
+
+//Optimal solution 
+let sum = Math.floor(n *(n+1) /2);
+for(let i = 0; i < n; i++){
+    sum-=nums[i];
+}
+ return sum;   
 };
